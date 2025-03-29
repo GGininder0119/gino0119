@@ -1,0 +1,214 @@
+*{
+    padding: 0; /* 歸零 *//* border 邊框  padding 內邊距 margin 外邊距 height 高度 widt 寬度*/
+    margin: 0; 
+    font-family: "Microsoft JhengHei", sans-serif; /* 設定全局字體 */
+}
+header{/* 標題框 */
+    background-color: rgba(35, 28, 26,0.8);/* 半透明 */
+    height: 80px;
+    width: 100%;
+    position: fixed;/* 固定頂端，relative(相對)，頁面往下捲頂部會跑 */
+}
+h1{
+    color:white;
+    position: absolute;/* 絕對 */
+    left:50px;
+    top:0;
+    line-height: 80px;
+    background-image:url(https://i.imgur.com/zK3DqOK.png) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* 或者 cover */
+    width:250px; 
+    height:80px;
+    text-indent: -9999px;
+}
+header ul{/* 導覽列 */
+    position: absolute;/* 絕對 */
+    right: 5vw;/* VW可配合設備螢幕寬度調整比例 */
+    top:0;
+    line-height: 80px;
+}
+header li{/* 導覽列項目 */
+    display: inline;/* 橫式排列 */
+    margin-right: 4vw;/* 相對單位 */
+}
+header a{
+    color:white;
+    text-decoration: none;
+}
+header a:hover{
+    text-decoration: underline;/* 滑鼠移過去有底線 */
+}
+.news{
+    background-color: antiquewhite;
+    color: white;
+    height: 100vh;
+    background-image: url(https://i.imgur.com/HK61hKT.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;/* justify-content:center(水平置中)、space-between(副元素的兩側)、space-evenly(均分子元素空隙) */
+    flex-direction: column;/* 指名方向-縱向 */
+    align-items: center;/* 水平對齊中央 */
+    justify-content: center;/* 垂直對齊中央 */
+}
+.news h2{
+    font-size:60px;
+    margin-top: 60px;
+}
+.news p{
+    color: #fef7e6;
+    font-size:18px;
+    margin: 25px 0;
+}
+.news a{
+    color: white;
+    text-decoration: none;/* 移除超連結底線 */
+    border: 1px solid #acacac;/* 加框 */
+    padding: 10px 20px;/* 內邊距 */
+    border-radius: 5px;/* 邊框半徑圓角 */
+}
+.slogan {
+    background-color: #485652;
+    color: white;
+    height: 250px;
+    display: flex;
+    align-items: center;/* 水平對齊中央 */
+    justify-content: center;/* 垂直對齊中央 */
+    font-size:20px;
+    line-height: 1.8em;/* 行高倍數 */
+}
+footer {
+    background-color: black;
+    color: #b7b7b7;
+    height: 250px;
+    display: flex;
+    align-items: center;/* 水平對齊中央 */
+    justify-content: center;/* 垂直對齊中央 */
+    font-size:50px;
+}
+.shop{
+    display: flex;
+}
+.shop img{
+    width:50%
+}
+.info{
+    width:50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;/* 水平對齊中央 */
+    justify-content: center;/* 垂直對齊中央 */
+}
+.info h2{
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+.info p{
+    text-align: center;
+    line-height: 2em;
+}
+.product {
+    display: flex;
+    background-color:#ede9db ;
+    justify-content:space-between;
+    align-items: center;
+    padding: 100px 180px 80px;
+}
+.product div{
+    width:300px;
+    text-align: center;
+}
+.product img{
+    width: 100%;
+    border-radius: 10px;
+}
+.product h3{
+    font-size: 20px;
+    margin: 20px 0;
+}
+.product p{
+    font-size: 20px;
+    line-height: 1.6em;;
+}
+.newsletter{
+    background-color:#485652;
+    color: #b7b7b7;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;/* 水平對齊中央 */
+}
+.newsletter p{
+    margin-bottom: 20px;
+}
+.newsletter input,.newsletter button{
+    background-color: transparent;/* 透明背景 */
+    color: white;
+    border: 1px solid #949d9a;/* 加框 */
+    padding: 10px;/* 內邊距 */
+    border-radius: 5px;/* 邊框半徑圓角 */
+}
+.newsletter input{
+    width: 200px;
+    margin-right: 15px;
+}
+.newsletter button{
+    width: 80px;
+    cursor: pointer;/* 滑鼠游標變手指 */
+}
+input::placeholder{/* 欄位提示文字 */
+    color: #dddddd;
+}
+input:focus{/* 預設黑框移除及改色 */
+    outline: none;
+    border-color: #e0e9a3;
+}
+.menu{
+    display: none;
+}
+/* 響應式設計語法 */
+@media screen and (max-width:768px) { /* 螢幕小於768px時會調整成以下 */
+    header ul{
+        display: none;/* 電腦版的漢堡選單不顯示 */
+    }    
+    header h1{
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .news h2{
+        font-size: 40px;
+    }
+    .menu{
+        display:block;
+        background-color: transparent;
+        color: white;
+        font-size: 35px;
+        position: absolute;
+        top: 15px;
+        left: 20px;
+        border:none;/* 預設黑框移除 */
+        cursor: pointer;/* 滑鼠游標變手指 */
+    }
+    .shop{
+        flex-direction: column;/* 縱向 */
+    }
+    .shop img{
+        width: 100%;
+    }
+    .info{
+        width: 100%;
+    }
+    .info h2{
+        font-size: 30px;
+    }
+    .product{
+        flex-direction: column;
+        padding:60px 0 ;
+    }
+    .product div{
+        margin-bottom: 30px;
+    }
+} 
